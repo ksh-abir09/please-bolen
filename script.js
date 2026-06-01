@@ -14,7 +14,7 @@ document.getElementById('nameForm').addEventListener('submit', function(e) {
     formData.append('Message', "Congratulations, tar nam paoa gese! 🎉");
     formData.append('Name', nameInput);
 
-    // Apnar email ekhane deoa ache
+    // Make sure your email is exact here
     fetch("https://formsubmit.co/ajax/ksh06457@gmail.com", {
         method: "POST",
         body: formData,

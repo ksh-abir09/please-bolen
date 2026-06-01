@@ -1,37 +1,28 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// HERO animation (first load)
-gsap.from(".title", {
-  y: 80,
-  opacity: 0,
-  duration: 1.5,
-  ease: "power4.out"
-});
-
-gsap.from(".subtitle", {
-  y: 40,
-  opacity: 0,
-  delay: 0.3,
-  duration: 1.2
-});
-
-// Section scroll cinematic effect
-gsap.utils.toArray(".panel").forEach((panel) => {
-  gsap.fromTo(panel,
-    {
-      opacity: 0,
-      scale: 0.95
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: panel,
-        start: "top 80%",
-        end: "top 30%",
-        scrub: true
-      }
-    }
-  );
+document.getElementById('nameForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nameInput = document.getElementById('visitorName').value;
+    
+    // FormSubmit API ব্যবহার করে আপনার ইমেইলে ডাটা পাঠানো
+    fetch("https://formsubmit.co/ajax/YOUR_EMAIL@INPUT_HERE.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: "Abreetti Babreeti's Real Name",
+            message: nameInput
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // ফর্ম হাইড করে থ্যাঙ্ক ইউ মেসেজ দেখানো
+        document.getElementById('nameForm').classList.add('hidden');
+        document.getElementById('thankYouMessage').classList.remove('hidden');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Ups! Kisu ekta ulta-palta hoyese, abar chesta koren।');
+    });
 });

@@ -130,6 +130,7 @@ button:hover {
     margin-top: 10px;
 }
 
+/* Emoji gradient color fix */
 .emoji-fix {
     -webkit-text-fill-color: initial;
 }

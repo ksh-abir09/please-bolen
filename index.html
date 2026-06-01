@@ -1,95 +1,47 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Question...</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>please bolen 🥹</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<link rel="stylesheet" href="style.css" />
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    font-family:Arial, sans-serif;
-    overflow:hidden;
-}
-
-.container{
-    text-align:center;
-    color:white;
-}
-
-.loading{
-    font-size:24px;
-    animation:blink 1s infinite;
-}
-
-.message{
-    display:none;
-    font-size:50px;
-    font-weight:bold;
-    animation:fadeIn 2s ease forwards;
-}
-
-.sub{
-    display:none;
-    margin-top:15px;
-    font-size:20px;
-    opacity:0.8;
-    animation:fadeIn 3s ease forwards;
-}
-
-@keyframes blink{
-    50%{opacity:0.3;}
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-</style>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="loading" id="loading">
-        Loading something important...
-    </div>
-        
-    <div class="message" id="message">
-        Please bolen 🥹
-    </div>
+<section class="panel hero">
+  <div class="content">
+    <h1 class="title">please bolen 🥹</h1>
+    <p class="subtitle">a cinematic emotional experience</p>
+  </div>
+</section>
 
-    <div class="sub" id="sub">
-        Ekta kotha jiggesh korbo...
-    </div>
-</div>
+<section class="panel dark">
+  <div class="content">
+    <h2>About This</h2>
+    <p>This website reacts with smooth cinematic transitions.</p>
+  </div>
+</section>
 
-<script>
-setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("message").style.display = "block";
-    document.getElementById("sub").style.display = "block";
-}, 2500);
-</script>
+<section class="panel">
+  <div class="content">
+    <h2>Your Message</h2>
+    <p>Every scroll feels like a story unfolding.</p>
+  </div>
+</section>
 
+<section class="panel dark">
+  <div class="content">
+    <h2>End</h2>
+    <p>Thanks for visiting ❤️</p>
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
-```
-          

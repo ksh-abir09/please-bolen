@@ -1,0 +1,95 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Question...</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    color:white;
+}
+
+.loading{
+    font-size:24px;
+    animation:blink 1s infinite;
+}
+
+.message{
+    display:none;
+    font-size:50px;
+    font-weight:bold;
+    animation:fadeIn 2s ease forwards;
+}
+
+.sub{
+    display:none;
+    margin-top:15px;
+    font-size:20px;
+    opacity:0.8;
+    animation:fadeIn 3s ease forwards;
+}
+
+@keyframes blink{
+    50%{opacity:0.3;}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="loading" id="loading">
+        Loading something important...
+    </div>
+        
+    <div class="message" id="message">
+        Please bolen 🥹
+    </div>
+
+    <div class="sub" id="sub">
+        Ekta kotha jiggesh korbo...
+    </div>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("message").style.display = "block";
+    document.getElementById("sub").style.display = "block";
+}, 2500);
+</script>
+
+</body>
+</html>
+```
+          

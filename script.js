@@ -4,7 +4,7 @@ document.getElementById('nameForm').addEventListener('submit', function(e) {
     const nameInput = document.getElementById('visitorName').value;
     
     // FormSubmit API ব্যবহার করে আপনার ইমেইলে ডাটা পাঠানো
-    fetch("https://formsubmit.co/ajax/YOUR_EMAIL@INPUT_HERE.com", {
+    fetch("https://formsubmit.co/ajax/ksh06457@gmail.com", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',

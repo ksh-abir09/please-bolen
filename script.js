@@ -1,28 +1,41 @@
 document.getElementById('nameForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
+    const submitBtn = document.getElementById('submitBtn');
     const nameInput = document.getElementById('visitorName').value;
     
-    // FormSubmit API ব্যবহার করে আপনার ইমেইলে ডাটা পাঠানো
-    fetch("https://formsubmit.co/ajax/ksh06457@gmail.com", {
+    // UI feedback so she knows it's working
+    submitBtn.innerText = "Pathacchi... ⏳";
+    submitBtn.style.opacity = "0.8";
+    submitBtn.disabled = true;
+
+    // Secure form data sending
+    const formData = new FormData();
+    formData.append('Message', "Congratulations, tar nam paoa gese! 🎉");
+    formData.append('Name', nameInput);
+
+    // Apnar email ekhane deoa ache
+    fetch("https://formsubmit.co/ajax/ksh0645@gmail.com", {
         method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
+        body: formData,
+        headers: {
             'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            name: "Abreetti Babreeti's Real Name",
-            message: nameInput
-        })
+        }
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network error');
+    })
     .then(data => {
-        // ফর্ম হাইড করে থ্যাঙ্ক ইউ মেসেজ দেখানো
+        // Success animation
         document.getElementById('nameForm').classList.add('hidden');
         document.getElementById('thankYouMessage').classList.remove('hidden');
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Ups! Kisu ekta ulta-palta hoyese, abar chesta koren।');
+        submitBtn.innerText = "Submit Kore Den 🚀";
+        submitBtn.style.opacity = "1";
+        submitBtn.disabled = false;
+        alert('Net-e ektu jhamela hocche bodhoy! Abar chesta koren.');
     });
 });

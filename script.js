@@ -15,7 +15,7 @@ document.getElementById('nameForm').addEventListener('submit', function(e) {
     formData.append('Name', nameInput);
 
     // Apnar email ekhane deoa ache
-    fetch("https://formsubmit.co/ajax/ksh0645@gmail.com", {
+    fetch("https://formsubmit.co/ajax/ksh06457@gmail.com", {
         method: "POST",
         body: formData,
         headers: {

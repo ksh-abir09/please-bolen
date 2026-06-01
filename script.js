@@ -27,9 +27,12 @@ document.getElementById('nameForm').addEventListener('submit', function(e) {
         throw new Error('Network error');
     })
     .then(data => {
-        // Success animation
+        // Form hide kore thank you message dekhano
         document.getElementById('nameForm').classList.add('hidden');
         document.getElementById('thankYouMessage').classList.remove('hidden');
+        
+        // EMOJI CHANGE LOGIC: 🤕 theke 😊 te change hobe
+        document.getElementById('mainEmoji').innerText = '😊';
     })
     .catch(error => {
         console.error('Error:', error);
